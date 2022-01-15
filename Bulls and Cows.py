@@ -25,13 +25,14 @@ while not guess_list:
         wrong_input = False
         bulls = 0
         cows = 0
-        # Checking for repeating numbers
         for i, n in enumerate(str(guess)):
+            # Checking correct lenght
             if guess not in range(1000, 10000):
                 print("The number must have 4 digits! Try again...")
                 guess_list = []
                 break
             guess_list.append(int(n))
+            # Checking for repeating numbers
             for idx in range(0, i):
                 if guess_list[idx] == guess_list[i]:
                     print("There cannot be any repeating numbers! Try again...")
@@ -54,7 +55,7 @@ while not guess_list:
             # Victory case
             if bulls == 4:
                 print("Correct, you've guessed the right number!")
-            # Lenght check
+            # Informing about bulls and cows
             else:
                 print(f"{bulls} bull", end=",") if bulls == 1 else print(f"{bulls} bulls", end=",")
                 print(f"{cows} cow") if cows == 1 else print(f"{cows} cows")
