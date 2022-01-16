@@ -1,6 +1,22 @@
 from random import sample
 from time import time
 
+
+# Evaluation def
+def overall_eval(clean_counter, t_time) -> str:
+    if clean_counter < 5 or t_time < 20:
+        result = "amazing"
+    elif clean_counter < 7 and t_time < 50:
+        result = "very good"
+    elif clean_counter < 10 and t_time < 60:
+        result = "good"
+    elif clean_counter > 15:
+        result = "not so good"
+    else:
+        result = "average"
+    return result
+
+
 # Greeting
 separator = "-"
 print("Hi there!")
@@ -22,6 +38,7 @@ guess = int()
 guess_list = []
 clean_guess_counter = 0
 wrong_input_counter = 0
+total_time = 0
 start_time = time()
 while not guess_list:
     try:
@@ -70,18 +87,23 @@ while not guess_list:
                 else:
                     print(f"It took you {clean_guess_counter} guesses", end="")
                 if wrong_input_counter == 1:
-                    print(f", {wrong_input_counter} wrong input.", end=" ")
+                    print(f", {wrong_input_counter} wrong input.")
                 else:
-                    print(f", {wrong_input_counter} wrong inputs", end=" ")
+                    print(f", {wrong_input_counter} wrong inputs")
                 print("and {:.2f} seconds.".format(total_time))
+                print(separator * 47)
             # Informing about bulls and cows
             else:
                 clean_guess_counter += 1
                 print(f"{bulls} bull", end=",") if bulls == 1 else print(f"{bulls} bulls", end=",")
                 print(f"{cows} cow") if cows == 1 else print(f"{cows} cows")
+                print(separator * 47)
                 guess_list = []
     # Case if non positive number or non-numeric type entered
     except ValueError:
         wrong_input_counter += 1
         print("Entered value must be a non negative number! Try again...")
-print(separator * 47)
+
+# Evaluation
+evaluation = overall_eval(clean_guess_counter, total_time)
+print(f"That's {evaluation}".)
