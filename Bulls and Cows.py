@@ -1,4 +1,5 @@
 from random import sample
+from time import time
 
 # Greeting
 separator = "-"
@@ -15,6 +16,7 @@ secret_source = list(range(0, 10))
 secret_number = [0, 0, 0, 0]
 while secret_number[0] == 0:
     secret_number = sample(secret_source, 4)
+print(secret_number)
 
 # Guessing
 guess = int()
@@ -23,6 +25,7 @@ clean_guess_counter = 0
 wrong_input_counter = 0
 while not guess_list:
     try:
+        start_time = time()
         guess = int(guess_txt := input())
         wrong_input = False
         bulls = 0
@@ -59,6 +62,8 @@ while not guess_list:
         else:
             # Victory case
             if bulls == 4:
+                end_time = time()
+                total_time = end_time - start_time
                 clean_guess_counter += 1
                 print("Correct, you've guessed the right number!")
                 if clean_guess_counter == 1:
@@ -66,9 +71,10 @@ while not guess_list:
                 else:
                     print(f"It took you {clean_guess_counter} guesses", end="")
                 if wrong_input_counter == 1:
-                    print(f" and {wrong_input_counter} wrong input.")
+                    print(f", {wrong_input_counter} wrong input.", end=" ")
                 else:
-                    print(f" and {wrong_input_counter} wrong inputs.")
+                    print(f", {wrong_input_counter} wrong inputs", end=" ")
+                print("and {:.2f} seconds.".format(total_time))
             # Informing about bulls and cows
             else:
                 clean_guess_counter += 1
