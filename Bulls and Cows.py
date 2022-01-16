@@ -95,7 +95,7 @@ while not guess_list:
             # Informing about bulls and cows
             else:
                 clean_guess_counter += 1
-                print(f"{bulls} bull", end=",") if bulls == 1 else print(f"{bulls} bulls", end=",")
+                print(f"{bulls} bull", end=", ") if bulls == 1 else print(f"{bulls} bulls", end=", ")
                 print(f"{cows} cow") if cows == 1 else print(f"{cows} cows")
                 print(separator * 47)
                 guess_list = []
