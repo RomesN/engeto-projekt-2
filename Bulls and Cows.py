@@ -61,8 +61,14 @@ while not guess_list:
             if bulls == 4:
                 clean_guess_counter += 1
                 print("Correct, you've guessed the right number!")
-                print(f"It took you {clean_guess_counter} guesses "
-                      f"and {wrong_input_counter} wrong inputs.")
+                if clean_guess_counter == 1:
+                    print(f"It took you {clean_guess_counter} guess", end="")
+                else:
+                    print(f"It took you {clean_guess_counter} guesses", end="")
+                if wrong_input_counter == 1:
+                    print(f" and {wrong_input_counter} wrong input.")
+                else:
+                    print(f" and {wrong_input_counter} wrong inputs.")
             # Informing about bulls and cows
             else:
                 clean_guess_counter += 1
