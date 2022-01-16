@@ -106,4 +106,4 @@ while not guess_list:
 
 # Evaluation
 evaluation = overall_eval(clean_guess_counter, total_time)
-print(f"That's {evaluation}".)
+print(f"That's {evaluation}.")
