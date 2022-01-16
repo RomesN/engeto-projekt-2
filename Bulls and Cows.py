@@ -16,7 +16,6 @@ secret_source = list(range(0, 10))
 secret_number = [0, 0, 0, 0]
 while secret_number[0] == 0:
     secret_number = sample(secret_source, 4)
-print(secret_number)
 
 # Guessing
 guess = int()
