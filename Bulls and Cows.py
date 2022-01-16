@@ -22,9 +22,9 @@ guess = int()
 guess_list = []
 clean_guess_counter = 0
 wrong_input_counter = 0
+start_time = time()
 while not guess_list:
     try:
-        start_time = time()
         guess = int(guess_txt := input())
         wrong_input = False
         bulls = 0
@@ -84,3 +84,4 @@ while not guess_list:
     except ValueError:
         wrong_input_counter += 1
         print("Entered value must be a non negative number! Try again...")
+print(separator * 47)
