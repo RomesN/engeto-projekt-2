@@ -48,7 +48,7 @@ def inpt_check(inpt: str) -> bool:
         return False
 
 
-#  Conversion of correct input to list of integers
+# Conversion of correct input to list of integers
 def converter(inpt: str) -> list:
     inpt_list = list(inpt)
     list_to_guess = []
