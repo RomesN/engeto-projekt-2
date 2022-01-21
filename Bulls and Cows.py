@@ -65,9 +65,10 @@ def inpt_check(inpt: str) -> bool:
 
 # Right input conversion to list of integers
 def converter(inpt: str) -> list:
-    list_to_guess = list(inpt)
+    inpt_list = list(inpt)
+    list_to_guess = []
     for idx in range(0, 4):
-        list_to_guess[idx] = int(list_to_guess[idx])
+        list_to_guess.append(int(inpt_list[idx]))
     return list_to_guess
 
 
