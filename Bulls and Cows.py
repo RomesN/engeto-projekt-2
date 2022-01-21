@@ -2,21 +2,6 @@ from random import sample
 from time import time
 
 
-# Evaluation
-def overall_eval(clean_counter: int, t_time: float) -> str:
-    if clean_counter < 5 or t_time < 20:
-        result = "amazing"
-    elif clean_counter < 7 and 50 > t_time:
-        result = "very good"
-    elif clean_counter < 10 and t_time < 60:
-        result = "good"
-    elif clean_counter > 15:
-        result = "not so good"
-    else:
-        result = "average"
-    return result
-
-
 # Greeting
 def greeting() -> None:
     separator = "-"
@@ -83,7 +68,7 @@ def bulls_cows(guessed_list: list, to_guess_list: list) -> tuple:
             cows += 1
     return bulls, cows
 
-
+# Printing results
 def victory_result(clean_guess_counter: int, wrong_input_counter: int, total_time: float) -> None:
     separator = "-"
     print("Correct, you've guessed the right number!")
@@ -97,6 +82,21 @@ def victory_result(clean_guess_counter: int, wrong_input_counter: int, total_tim
         print(f", {wrong_input_counter} wrong inputs")
     print("and {:.2f} seconds.".format(total_time))
     print(separator * 47)
+    return None
+
+# Evaluation
+def overall_eval(clean_counter: int, t_time: float) -> str:
+    if clean_counter < 5 or t_time < 20:
+        result = "amazing"
+    elif clean_counter < 7 and 50 > t_time:
+        result = "very good"
+    elif clean_counter < 10 and t_time < 60:
+        result = "good"
+    elif clean_counter > 15:
+        result = "not so good"
+    else:
+        result = "average"
+    return result
 
 
 # Main
