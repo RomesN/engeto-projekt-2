@@ -63,7 +63,7 @@ def inpt_check(inpt: str) -> bool:
         return False
 
 
-# Input check
+# Right input conversion to list of integers
 def converter(inpt: str) -> list:
     list_to_guess = list(inpt)
     for idx in range(0, 4):
