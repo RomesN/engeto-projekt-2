@@ -68,6 +68,7 @@ def bulls_cows(guessed_list: list, to_guess_list: list) -> tuple:
             cows += 1
     return bulls, cows
 
+
 # Printing results
 def victory_result(clean_guess_counter: int, wrong_input_counter: int, total_time: float) -> None:
     separator = "-"
@@ -83,6 +84,7 @@ def victory_result(clean_guess_counter: int, wrong_input_counter: int, total_tim
     print("and {:.2f} seconds.".format(total_time))
     print(separator * 47)
     return None
+
 
 # Evaluation
 def overall_eval(clean_counter: int, t_time: float) -> str:
